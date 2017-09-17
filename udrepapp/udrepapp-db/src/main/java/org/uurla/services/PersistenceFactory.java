@@ -12,7 +12,6 @@ public interface PersistenceFactory {
 	public Object getODataJPAContext();
 	public EntityManagerFactory getEmf();
 	public EntityManagerFactory getEmfAdmin();
-	public void initDBData(EntityManagerFactory emf);
 	
 	public void clearUser();
 	public void setUser(String login, List<String> groups);
@@ -23,15 +22,11 @@ public interface PersistenceFactory {
 	public String getPersistenceUnitNameAdmin();
 	public void setAppName(String appName);
 	public String getAppName();
-	public boolean isUserAuthInTheApp() throws Exception;
 	public void setContainerLocale(Locale l);
-	public Locale getLocale();
-	public ResourceBundle getBundle();
 	public void initUser();
 	public void setOdataContext(Object context);
 	public Object getOdataContext();
 	public String getAppParameterValue(String name, boolean bypassbuffer);
-	public String getLocalizedMessage(String msg, Object[] params);
 	public void setEntityDataModel(Object edm);
 	public Object getEntityDataModel();
 	public void setRealPath(String str);

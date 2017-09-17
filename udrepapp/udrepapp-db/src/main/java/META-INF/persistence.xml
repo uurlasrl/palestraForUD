@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="org.uurla.projects.db.persistence">
+		<description>Persistenza per la gestione progetti</description>
+	   <mapping-file>META-INF/mappingFile.xml</mapping-file>
+		<class>org.uurla.ud.udrepapp.db.entities.Projectlog</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
+		<properties>
+			<property name="hibernate.connection.datasource" value="java:comp/env/jdbc/uddb" />
+	 		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />  
+ 
+ 			
+			<property name="hibernate.hbm2ddl.auto" value="update" /><!--  create update validate -->
+			
+			<property name="hibernate.physical_naming_strategy" value="org.uurla.project.db.naming.UurlaPhysicalNaminStrategy" />
+			
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="org.uurla.projects.db.persistence.admin">
+		<description>Persistenza per la gestione progetti</description>
+		<class>org.uurla.ud.udrepapp.db.entities.Projectlog</class>
+		<class>org.uurla.services.db.entities.AppParameter</class>
+		<class>org.uurla.services.auth.db.entities.User</class>
+		<class>org.uurla.services.auth.db.entities.Role</class>
+		<class>org.uurla.services.auth.db.entities.AuthGroup</class>
+		<class>org.uurla.services.auth.db.entities.AuthObject</class>
+
+		<class>org.uurla.services.db.entities.ResourceBundleEntity</class>
+		<class>org.uurla.services.db.entities.HandleConfiguration</class>
+		<class>org.uurla.services.db.entities.HandleConfigurationAuth</class>
+		<class>org.uurla.services.db.entities.Apps</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="hibernate.connection.datasource" value="java:comp/env/jdbc/uddb" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> 
+			<property name="hibernate.hbm2ddl.auto" value="validate" /><!-- update validate -->
+			<property name="hibernate.physical_naming_strategy" value="org.uurla.project.db.naming.UurlaPhysicalNaminStrategy" />
+		</properties>
+	</persistence-unit>
+	
+
+</persistence>

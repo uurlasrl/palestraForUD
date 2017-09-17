@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JPAEDMMappingModel	xmlns="http://www.apache.org/olingo/odata2/jpa/processor/api/model/mapping">
+	<PersistenceUnit name="org.uurla.projects.projman.db.persistence">
+
+		<EDMSchemaNamespace>org.uurla.project.odata</EDMSchemaNamespace>
+
+		<JPAEntityTypes>
+			<JPAEntityType name="Currency">
+				<EDMEntityType>Currency</EDMEntityType>
+				<EDMEntitySet>Currencys</EDMEntitySet>
+				<JPAAttributes />
+				<JPARelationships/>
+			</JPAEntityType>
+			<JPAEntityType name="ProjectType">
+				<EDMEntityType>ProjectType</EDMEntityType>
+				<EDMEntitySet>ProjectTypes</EDMEntitySet>
+				<JPAAttributes />
+				<JPARelationships/>
+			</JPAEntityType>
+			<JPAEntityType name="TaskType">
+				<EDMEntityType>TaskType</EDMEntityType>
+				<EDMEntitySet>TaskTypes</EDMEntitySet>
+				<JPAAttributes />
+				<JPARelationships/>
+			</JPAEntityType>
+			<JPAEntityType name="Project">
+				<EDMEntityType>Project</EDMEntityType>
+				<EDMEntitySet>Projects</EDMEntitySet>
+				<JPAAttributes/>
+				<!--	<JPAAttribute  name="code">Codice</JPAAttribute>
+					</JPAAttributes>
+				 <JPAAttribute name="id">ID</JPAAttribute>
+				<JPAAttribute name="netAmount">NetAmount</JPAAttribute> 
+					<JPAAttribute name="buyerAddress">BuyerAddressInfo</JPAAttribute> </JPAAttributes> -->
+				<JPARelationships>
+					<JPARelationship name="tasks">Tasks</JPARelationship>
+					<JPARelationship name="parentProject">ParentProject</JPARelationship>
+					<JPARelationship name="childProjects">ChildProjects</JPARelationship>
+					<JPARelationship name="loglist">Loglists</JPARelationship>
+					<JPARelationship name="currency">Currency</JPARelationship>
+					<JPARelationship name="type">Type</JPARelationship>
+					<JPARelationship name="status">Status</JPARelationship>
+					<JPARelationship name="projectManager">ProjectManager</JPARelationship>
+					<JPARelationship name="approver">Approver</JPARelationship>
+					<JPARelationship name="payer">Payer</JPARelationship>
+					<JPARelationship name="customer">Customer</JPARelationship>
+					
+				</JPARelationships>
+			</JPAEntityType>
+			<JPAEntityType name="Projectlog">
+				<EDMEntityType>Projectlog</EDMEntityType>
+				<EDMEntitySet>Projectlogs</EDMEntitySet>
+				<JPAAttributes/>
+				<JPARelationships>
+					<JPARelationship name="project">Project</JPARelationship>
+					<JPARelationship name="resource">Resource</JPARelationship>
+					<JPARelationship name="type">Type</JPARelationship>
+				</JPARelationships>
+			</JPAEntityType>
+			<JPAEntityType name="Task">
+				<EDMEntityType>Task</EDMEntityType>
+				<EDMEntitySet>Tasks</EDMEntitySet>
+				<JPAAttributes />
+				<!-- <JPAAttribute name="liId">ID</JPAAttribute> <JPAAttribute name="soId">SalesOrderID</JPAAttribute> 
+					</JPAAttributes> -->
+				<JPARelationships>
+					<JPARelationship name="project">Project</JPARelationship>
+					<JPARelationship name="parentTask">ParentTask</JPARelationship>
+					<JPARelationship name="childTasks">ChildTasks</JPARelationship>
+					<JPARelationship name="currency">Currency</JPARelationship>
+					<JPARelationship name="type">Type</JPARelationship>
+					<JPARelationship name="status">Status</JPARelationship>
+					<JPARelationship name="resources">Resources</JPARelationship>
+				</JPARelationships>
+			</JPAEntityType>
+			<JPAEntityType name="Resource">
+				<EDMEntityType>Resource</EDMEntityType>
+				<EDMEntitySet>Resources</EDMEntitySet>
+				<JPAAttributes />
+				<!-- <JPAAttribute name="liId">ID</JPAAttribute> <JPAAttribute name="soId">SalesOrderID</JPAAttribute> 
+					</JPAAttributes> -->
+				<JPARelationships>
+					<JPARelationship name="type">Type</JPARelationship>
+					<JPARelationship name="user">$User</JPARelationship>
+					<JPARelationship name="manager">Manager</JPARelationship>
+					<JPARelationship name="subresurces">SubResources</JPARelationship>
+				</JPARelationships>
+			</JPAEntityType>
+			<JPAEntityType name="CustomerContact">
+				<EDMEntityType>CustomerContacts</EDMEntityType>
+				<EDMEntitySet>CustomerContacts</EDMEntitySet>
+				<JPAAttributes />
+				<!-- <JPAAttribute name="liId">ID</JPAAttribute> <JPAAttribute name="soId">SalesOrderID</JPAAttribute> 
+					</JPAAttributes> -->
+				<JPARelationships>
+					<JPARelationship name="resource">Resource</JPARelationship>
+				</JPARelationships>
+			</JPAEntityType>
+		</JPAEntityTypes>
+		<JPAEmbeddableTypes />
+
+		<!-- <JPAEmbeddableType name="Address"> <EDMComplexType>AddressInfo</EDMComplexType> 
+			<JPAAttributes> <JPAAttribute name="houseNumber">Number</JPAAttribute> <JPAAttribute 
+			name="streetName">Street</JPAAttribute> </JPAAttributes> </JPAEmbeddableType> 
+			</JPAEmbeddableTypes> -->
+	</PersistenceUnit>
+</JPAEDMMappingModel>
