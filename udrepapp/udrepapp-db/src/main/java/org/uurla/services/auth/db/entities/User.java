@@ -21,8 +21,8 @@ import org.uurla.services.auth.PasswordEncryptionService;
  * Entity implementation class for Entity: User
  *
  */
-@Entity
-@Table(name="uurlauser")
+//@Entity
+//@Table(name="uurlauser")
 public class User implements Serializable {
 	@Transient
 	public String[][] getAuth(){

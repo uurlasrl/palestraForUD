@@ -9,7 +9,7 @@ import javax.persistence.*;
  * Entity implementation class for Entity: AppParameter
  *
  */
-@Entity
+//@Entity
 
 public class AppParameter implements Serializable {
 	@Transient

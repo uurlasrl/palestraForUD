@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
  * Entity implementation class for Entity: HandleConfiguration
  *
  */
-@Entity
+//@Entity
 
 public class HandleConfiguration implements Serializable {
 	@Transient

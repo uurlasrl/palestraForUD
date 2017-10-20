@@ -12,8 +12,8 @@ import javax.persistence.*;
  * Entity implementation class for Entity: Role
  *
  */
-@Entity
-@Table(name="uurlarole")
+//@Entity
+//@Table(name="uurlarole")
 public class Role implements Serializable {
 	@Transient
 	public String[][] getAuth(){

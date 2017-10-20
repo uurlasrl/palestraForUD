@@ -10,7 +10,7 @@ import javax.persistence.*;
  * Entity implementation class for Entity: Messages
  *
  */
-@Entity(name="resourcebundle")
+//@Entity(name="resourcebundle")
 public class ResourceBundleEntity implements Serializable {
 	@Transient
 	public String[][] getAuth(){

@@ -1,6 +1,7 @@
 package org.uurla.services.odata.handler;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,24 +9,17 @@ import javax.ws.rs.client.Client;
 import javax.xml.rpc.holders.IntHolder;
 import javax.xml.rpc.holders.StringHolder;
 
-import org.apache.cxf.jaxrs.client.ClientProxyImpl;
-import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
-import org.apache.cxf.jaxrs.client.WebClient;
 import org.apache.olingo.odata2.api.annotation.edm.EdmFacets;
 import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImport.ReturnType;
 import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImport.ReturnType.Type;
 import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImport;
 import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImportParameter;
 import org.apache.olingo.odata2.api.exception.ODataException;
+import org.uurla.udrepapp.TestTable;
 
-import com.sun.istack.Builder;
 
 import mc_style.functions.soap.sap.document.sap_com.E1Bpache09;
 import mc_style.functions.soap.sap.document.sap_com.ZRFCACCDOCUMENTProxy;
-import mc_style.functions.soap.sap.document.sap_com.ZRFCACCDOCUMENT_BindingStub;
-import mc_style.functions.soap.sap.document.sap_com.ZRFCACCDOCUMENT_PortType;
-import mc_style.functions.soap.sap.document.sap_com.ZRFCACCDOCUMENT_Service;
-import mc_style.functions.soap.sap.document.sap_com.ZRFCACCDOCUMENT_ServiceLocator;
 import mc_style.functions.soap.sap.document.sap_com.Zrie1Bpacap09;
 import mc_style.functions.soap.sap.document.sap_com.Zrie1Bpacar09;
 import mc_style.functions.soap.sap.document.sap_com.Zrie1Bpaccahd;
@@ -135,8 +129,8 @@ public class GeneralODataFunctions {
 
 		return null;
 }
-	@EdmFunctionImport(name = "getPdfReport03", returnType = @ReturnType(type = Type.COMPLEX, isCollection = false))
-	public org.uurla.services.odata.handler.complex.FileDownloadUtility getPdfReport03(
+	@EdmFunctionImport(name = "getPdfReport03", returnType = @ReturnType(type = Type.COMPLEX, isCollection = true))
+	public java.util.List<TestTable> getPdfReport03(
 											  		
 												  /*
 												   * date type
@@ -163,6 +157,13 @@ public class GeneralODataFunctions {
 											  
 											  @EdmFunctionImportParameter(name = "resids"  , facets = @EdmFacets(nullable = true))  final String resIds 
 											  ) throws ODataException{
-		return null;
+		
+		
+		TestTable t = new TestTable(1, "nome1", "tipo21", 1.75);
+		ArrayList<TestTable> at=new ArrayList<TestTable>();
+		at.add(t);
+		t = new TestTable(2, "nome2", "tipo1", 2.75);
+		at.add(t);
+		return at;
 	}
 }

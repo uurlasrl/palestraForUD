@@ -89,7 +89,7 @@ public class FunctionProcessingExtension implements JPAEdmExtension {
 
 //Esempio di inserimento dei complex type		
 		
-		ComplexType cp = getComplexType();
+		ComplexType cp = getComplexType1();
 		ComplexType cp2 = getComplexType2();
 		List<ComplexType> lcp = edmSchema.getComplexTypes();
 		if (lcp == null) {
@@ -103,38 +103,37 @@ public class FunctionProcessingExtension implements JPAEdmExtension {
 		}
 	}
 
-	private ComplexType getComplexType() {
+	private ComplexType getComplexType1() {
 		ComplexType complexType = new ComplexType();
 
 		List<Property> properties = new ArrayList<Property>();
 
 		SimpleProperty property = new SimpleProperty();
 
-		property.setName("ProjectId");
+		property.setName("Id");
 		property.setType(EdmSimpleTypeKind.Int64);
 		properties.add(property);
 
 		property = new SimpleProperty();
-		property.setName("TaskId");
-		property.setType(EdmSimpleTypeKind.Int64);
+		property.setName("Nome");
+		property.setType(EdmSimpleTypeKind.String);
 		properties.add(property);
 
 		property = new SimpleProperty();
-		property.setName("Username");
+		property.setName("Type");
 		property.setType(EdmSimpleTypeKind.String);
 		// property.setFacets(new EdmFacets().getMaxLength())
 		properties.add(property);
 
 		property = new SimpleProperty();
-		property.setName("days");
-		property.setType(EdmSimpleTypeKind.Single);
+		property.setName("Days");
+		property.setType(EdmSimpleTypeKind.Double);
 		properties.add(property);
 
-		complexType.setName("WorkedDayForTasks");
+		complexType.setName("TestTable");
 		complexType.setProperties(properties);
 
 		return complexType;
-
 	}
 
 	private ComplexType getComplexType2() {

@@ -17,8 +17,8 @@ import javax.persistence.Transient;
  * Entity implementation class for Entity: User
  * Could not determine type for: java.util.Set, at table: uurlaauthobj, for columns: [org.hibernate.mapping.Column(grpobjects)]
  */
-@Entity
-@Table(name="uurlaauthgrp")
+//@Entity
+//@Table(name="uurlaauthgrp")
 public class AuthGroup{
 	@Transient
 	public String[][] getAuth(){

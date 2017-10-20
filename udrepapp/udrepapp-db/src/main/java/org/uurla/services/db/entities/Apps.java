@@ -21,8 +21,8 @@ import org.uurla.services.auth.PasswordEncryptionService;
  * Entity implementation class for Entity: User
  *
  */
-@Entity
-@Table(name="uurlaapps")
+//@Entity
+//@Table(name="uurlaapps")
 public class Apps implements Serializable {
 	/**
 	 * 

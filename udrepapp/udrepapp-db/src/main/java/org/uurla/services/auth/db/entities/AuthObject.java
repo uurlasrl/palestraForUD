@@ -17,8 +17,8 @@ import javax.persistence.Transient;
  * Ogni record si riferisce ad una tabella e definisce le regole di accesso alla tabella
  * 
  */
-@Entity
-@Table(name="uurlaauthobj")
+//@Entity
+//@Table(name="uurlaauthobj")
 public class AuthObject implements Serializable{
 	/**
 	 * 
