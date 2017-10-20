@@ -1,0 +1,16 @@
+<mvc:View controllerName="org.uurla.reportsReports.controller.Dashboard" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>dashboardTitle}">
+				<content>
+					<TileContainer>
+						<StandardTile press="onNavigateToPage" icon="sap-icon://upload" type="None" title="GESTIRE MIF" info="Entra" infoState="Success"/>
+						<StandardTile press="onNavigateToPage" icon="sap-icon://add-product" type="None" title="PROPORRE" info="Entra" infoState="Success"/>
+						<StandardTile press="onNavigateToPage" icon="sap-icon://approvals" type="None" title="REGOLARIZZARE" info="Entra" infoState="Success"/>
+					</TileContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

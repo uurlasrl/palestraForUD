@@ -1,0 +1,49 @@
+<mvc:View controllerName="org.uurla.reportsReports.controller.NewPropostaAcc" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>newpropostaaccTitle}" showNavButton="true" navButtonPress="onGoToBackView">
+				<content>
+					<f:SimpleForm id="SimpleForm2" editable="false" layout="ResponsiveGridLayout" title="Sospeso" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="Data Rilascio Ricevuta"/>
+							<Text text="02/01/17"/>
+							<Label text="Data Pagamento"/>
+							<Text text="02/01/17"/>
+							<Label text="Esercizio"/>
+							<Text text="2.017"/>
+							<Label text="Versante"/>
+							<Text text="Riscossione Sicilia S.p.a."/>
+							<Label text="Stato del Sospeso"/>
+							<Text text="Regolarizzato Mif"/>
+							<Label text="Importo"/>
+							<Text text="0,75 Euro"/>
+							<Label text="Causale"/>
+							<Text text=".AG ENTE VERS.2017.01.02 RUOLI POSTRIF. PROV.AG ENTE 12783 B 1 VERS.2017.01.02 RUOLI POSTRIF. PROV /BON.SEPA TRN 1001170020000796"/>
+						</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm id="SimpleForm1" editable="false" layout="ResponsiveGridLayout" title="Proposta" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="Inserire il codice di accertamento"/>
+							<Input text="" />
+							<Label text="Anno"/>
+							<Input text=""/>
+							<Label text="Importo"/>
+							<Input text=""/>
+							<Label text="Descrizione Reversale"/>
+							<Input text=""/>
+							<Label text="Posizione"/>
+							<Input text=""/>
+							<Label text="Da esaminare"/>
+							<CheckBox  />
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

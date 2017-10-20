@@ -7,6 +7,7 @@
 		<description>Persistenza per la gestione progetti</description>
 	   <mapping-file>META-INF/mappingFile.xml</mapping-file>
 		<class>org.uurla.ud.udrepapp.db.entities.Projectlog</class>
+		<class>org.uurla.ud.udrepapp.db.entities.TestTable</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
@@ -35,6 +36,7 @@
 		<class>org.uurla.services.db.entities.HandleConfiguration</class>
 		<class>org.uurla.services.db.entities.HandleConfigurationAuth</class>
 		<class>org.uurla.services.db.entities.Apps</class>
+		<class>org.uurla.ud.udrepapp.db.entities.TestTable</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

@@ -15,8 +15,7 @@ import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImport.ReturnType.
 import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImport;
 import org.apache.olingo.odata2.api.annotation.edm.EdmFunctionImportParameter;
 import org.apache.olingo.odata2.api.exception.ODataException;
-import org.uurla.udrepapp.TestTable;
-
+import org.uurla.ud.udrepapp.db.entities.TestTable;
 
 import mc_style.functions.soap.sap.document.sap_com.E1Bpache09;
 import mc_style.functions.soap.sap.document.sap_com.ZRFCACCDOCUMENTProxy;
@@ -129,7 +128,7 @@ public class GeneralODataFunctions {
 
 		return null;
 }
-	@EdmFunctionImport(name = "getPdfReport03", returnType = @ReturnType(type = Type.COMPLEX, isCollection = true))
+	@EdmFunctionImport(name = "getPdfReport03", entitySet = "TestTables", returnType = @ReturnType(type = Type.ENTITY, isCollection = true))
 	public java.util.List<TestTable> getPdfReport03(
 											  		
 												  /*
@@ -139,8 +138,10 @@ public class GeneralODataFunctions {
 												   * 2 - se la data è presente usa il mese
 												   * 3 - se la data è presente usa l'anno
 												   */
-											  		
-											  @EdmFunctionImportParameter(name = "typefrom", facets = @EdmFacets(nullable = false)) final Integer typefrom,
+			                                  @EdmFunctionImportParameter(name = "top", facets = @EdmFacets(nullable = true)) final Long top,		
+			                                  @EdmFunctionImportParameter(name = "skip", facets = @EdmFacets(nullable = true)) final Long skip,	
+											  
+			                                  @EdmFunctionImportParameter(name = "typefrom", facets = @EdmFacets(nullable = false)) final Integer typefrom,
 											  @EdmFunctionImportParameter(name = "datefrom", facets = @EdmFacets(nullable = true)) final String datefromstr,
 											  @EdmFunctionImportParameter(name = "typeto", facets = @EdmFacets(nullable = false)) final Integer typeto,
 											  @EdmFunctionImportParameter(name = "dateto"  , facets = @EdmFacets(nullable = true)) final String datetostr,
@@ -159,10 +160,30 @@ public class GeneralODataFunctions {
 											  ) throws ODataException{
 		
 		
-		TestTable t = new TestTable(1, "nome1", "tipo21", 1.75);
+		TestTable t = new TestTable(new Long(1), "nome1", "tipo1", new Long((long)1.75));
 		ArrayList<TestTable> at=new ArrayList<TestTable>();
 		at.add(t);
-		t = new TestTable(2, "nome2", "tipo1", 2.75);
+		t = new TestTable(new Long(2), "nome2", "tipo2", new Long((long)2.75));
+		at.add(t);
+		t = new TestTable(new Long(3), "nome3", "tipo3", new Long((long)3.75));
+		at.add(t);
+		t = new TestTable(new Long(4), "nome4", "tipo4", new Long((long)4.75));
+		at.add(t);
+		t = new TestTable(new Long(5), "nome5", "tipo5", new Long((long)5.75));
+		at.add(t);
+		t = new TestTable(new Long(6), "nome6", "tipo6", new Long((long)6.75));
+		at.add(t);
+		t = new TestTable(new Long(7), "nome7", "tipo7", new Long((long)7.75));
+		at.add(t);
+		t = new TestTable(new Long(8), "nome8", "tipo8", new Long((long)8.75));
+		at.add(t);
+		t = new TestTable(new Long(9), "nome9", "tipo9", new Long((long)9.75));
+		at.add(t);
+		t = new TestTable(new Long(10), "nome10", "tipo10", new Long((long)10.75));
+		at.add(t);
+		t = new TestTable(new Long(11), "nome11", "tipo11", new Long((long)11.75));
+		at.add(t);
+		t = new TestTable(new Long(12), "nome12", "tipo12", new Long((long)12.75));
 		at.add(t);
 		return at;
 	}

@@ -1,0 +1,70 @@
+<mvc:View controllerName="org.uurla.reportsReports.controller.Detail" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>detailPageTitle}" showNavButton="true" navButtonPress="onGoToBackView">
+				<content>
+					<f:SimpleForm id="SimpleForm" editable="false" layout="ResponsiveGridLayout" title="Sospeso" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="Esercizio"/>
+							<Text text="2.017"/>
+							<Label text="Id Sospeso"/>
+							<Text text="14"/>
+							<Label text="Versante"/>
+							<Text text="A.G.S.M. Energia S.p.a."/>
+							<Label text="Causale"/>
+							<Text text="U001 RATA DICEMBRE FORNITURA GAS MANDATO 7100632- 1-2016 NOTPROVIDED /BON.SEPA TRN 1001170020001781"/>
+							<Label text="Data rilascio ricevuta"/>
+							<Text text="02/01/17"/>
+							<Label text="Data pagamento"/>
+							<Text text="02/01/17"/>
+							<Label text="Stato del sospeso"/>
+							<Text text="Ricevuto e Verificato"/>
+							<Label text="Regolarizzato Mif"/>
+							<Text text="S"/>
+						</f:content>
+					</f:SimpleForm>
+					<Table id="idDetailTable" inset="false" mode="None" items="{ path: '/getPdfReport03', parameters: { custom: { 'typefrom': '0', 'typeto': '1', 'typefile': '1'} } }" growing="true" growingThreshold="50" growingScrollToLoad="false">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Proposte" level="H4"/>
+								<ToolbarSpacer/>
+								<ToolbarSeparator/>
+								<Button type="Transparent" icon="sap-icon://add" text="Nuova Proposta" tooltip="Nuova Proposta"/>
+								<Button type="Transparent" icon="sap-icon://edit" text="Modifica Proposta" tooltip="Modifica Proposta"/>
+								<Button type="Transparent" icon="sap-icon://filter" text="Filtra" tooltip="Filtra"/>
+								<Button type="Transparent" icon="sap-icon://action-settings" tooltip="Impostazioni"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline">
+								<Text text="Id"/>
+							</Column>
+							<Column minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline">
+								<Text text="Nome"/>
+							</Column>
+							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
+								<Text text="Tipo"/>
+							</Column>
+							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
+								<Text text="Giorno"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{Id}"/>
+									<Text text="{Name}"/>
+									<Text text="{Type}"/>
+									<Text text="{Days}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

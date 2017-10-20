@@ -89,16 +89,16 @@ public class FunctionProcessingExtension implements JPAEdmExtension {
 
 //Esempio di inserimento dei complex type		
 		
-		ComplexType cp = getComplexType1();
+		//ComplexType cp = getComplexType1();
 		ComplexType cp2 = getComplexType2();
 		List<ComplexType> lcp = edmSchema.getComplexTypes();
 		if (lcp == null) {
 			lcp = new ArrayList<ComplexType>();
-			lcp.add(cp);
+			//lcp.add(cp);
 			lcp.add(cp2);
 			edmSchema.setComplexTypes(lcp);
 		} else {
-			lcp.add(cp);
+			//lcp.add(cp);
 			lcp.add(cp2);
 		}
 	}

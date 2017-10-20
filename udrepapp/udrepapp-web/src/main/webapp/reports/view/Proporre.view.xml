@@ -1,0 +1,78 @@
+<mvc:View controllerName="org.uurla.reportsReports.controller.Proporre" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>proporreTitle}" showNavButton="true" navButtonPress="onGoToBackView">
+				<content>
+					<f:SimpleForm id="SimpleForm2" editable="false" layout="ResponsiveGridLayout" title="Sospeso" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="Data Rilascio Ricevuta"/>
+							<Text text="02/01/17"/>
+							<Label text="Data Pagamento"/>
+							<Text text="02/01/17"/>
+							<Label text="Esercizio"/>
+							<Text text="2.017"/>
+							<Label text="Versante"/>
+							<Text text="Riscossione Sicilia S.p.a."/>
+							<Label text="Stato del Sospeso"/>
+							<Text text="Regolarizzato Mif"/>
+							<Label text="Importo"/>
+							<Text text="0,75 Euro"/>
+							<Label text="Causale"/>
+							<Text text=".AG ENTE VERS.2017.01.02 RUOLI POSTRIF. PROV.AG ENTE 12783 B 1 VERS.2017.01.02 RUOLI POSTRIF. PROV /BON.SEPA TRN 1001170020000796"/>
+						</f:content>
+					</f:SimpleForm>
+					<Table id="idProporreTable" inset="false" mode="None" items="{ path: '/getPdfReport03', parameters: { custom: { 'typefrom': '0', 'typeto': '1', 'typefile': '1'} } }" growing="true" growingThreshold="50" growingScrollToLoad="false">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Proposte" level="H4"/>
+								<ToolbarSpacer/>
+								<ToolbarSeparator/>									
+								<Button type="Transparent" icon="sap-icon://add" text="Nuova Proposta" tooltip="Nuova Proposta" press="onAddProposta"/>
+								<ResponsivePopover id="popoverAddProposta" title="Crea proposta" class="sapUiPopupWithPadding" placement="Bottom">
+									<beginButton>
+										<Button text="da Accertamento" press="handlePopoverAddPropostaBtn"/>
+									</beginButton>
+									<endButton>
+										<Button text="da Capitolo" press="handlePopoverAddPropostaBtn"/>
+									</endButton>
+									<content>
+									<Text text="Crea una proposta:" />
+									</content>
+								</ResponsivePopover>
+								<Button type="Transparent" icon="sap-icon://refresh" text="Aggiorna Sospesi" tooltip="Aggiorna Sospesi"/>
+								<Button type="Transparent" icon="sap-icon://action-settings" tooltip="Impostazioni"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline">
+								<Text text="Id"/>
+							</Column>
+							<Column minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline">
+								<Text text="Nome"/>
+							</Column>
+							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
+								<Text text="Tipo"/>
+							</Column>
+							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
+								<Text text="Giorno"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation" press="onNavigateToDetail">
+								<cells>
+									<Text text="{Id}"/>
+									<Text text="{Name}"/>
+									<Text text="{Type}"/>
+									<Text text="{Days}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
